@@ -2,6 +2,8 @@
 
 This repository provides a PyTorch implementation of the Yeo-Johnson Transformation applied to distributions, allowing for direct sampling from transformed normal distributions. The main use case is to enable sampling from normal distributions transformed using a Yeo-Johnson Transform. Sampling from other base distributions can also be easily implemented by following the provided `YeoJohnsonNormal` class example.
 
+![yjt_normal](https://github.com/lwelzel/yjt-distributions/assets/29613344/b0f8fbd5-0370-4003-b3cf-6aafee321c37)
+
 ## Features
 - **Yeo-Johnson Transform**: Implements the Yeo-Johnson transformation, which can handle both positive and negative inputs, as a PyTorch transform.
 - **Transformed Normal Distribution**: Provides a `YeoJohnsonNormal` class for directly sampling from normal distributions transformed with the Yeo-Johnson transform.
@@ -58,3 +60,10 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Original Use Case
+The original use case for this was the need to sample from a transit depth dataset which was normalized using a YJ-transform. This is useful since the individual transit depths are normally distributed, however after transforming the spectra, the uncertainties are not normal anymore. Sampling from the transformed distributions is more convienient for downstream learning tasks.
+
+![image](https://github.com/lwelzel/yjt-distributions/assets/29613344/e04b3b97-bda5-4c40-be7f-cd9f3ff0fd8b)
+![Drawing](https://github.com/lwelzel/yjt-distributions/assets/29613344/0b1d59eb-e2cc-4275-83a9-f0f629cba397)
+
